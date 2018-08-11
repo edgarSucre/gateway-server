@@ -37,11 +37,11 @@ public class TrackingFilter extends ZuulFilter {
     public Object run() throws ZuulException {
 
         if (isCorrelationIdPresent()) {
-            logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
+            logger.debug("spp-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
         }
         else{
             filterUtils.setCorrelationId(generateCorrelationId());
-            logger.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
+            logger.debug("spp-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
         }
 
         RequestContext ctx = RequestContext.getCurrentContext();
